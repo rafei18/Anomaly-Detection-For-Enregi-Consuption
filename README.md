@@ -82,4 +82,27 @@ Nous avons comparé plusieurs approches pour détecter ces anomalies :
 
 ---
 
-###
+### 2️⃣ **Temporal Convolutional Network Autoencoder (TCN AE)**
+- Utilisation d'un **réseau de neurones convolutif temporel** pour mieux capturer les dépendances à long terme.  
+- Architecture avec des **couches causales** et **dilatées** pour maximiser la prise en compte des tendances.  
+
+📸 *Architecture du TCN AE* :  
+![Architecture TCN AE](images/tcn_ae_architecture.png)  
+
+<p align="center">
+  <img src="TCN AE.png" alt="Architecture VAE">
+</p> 
+---
+
+### 3️⃣ **Méthode de Seuillage pour la Détection**  
+Nous avons utilisé une approche basée sur l’erreur de reconstruction pour détecter les anomalies :  
+- Calcul de **l’erreur de reconstruction** entre l’entrée et la sortie du modèle.  
+- Définition d’un **seuil** basé sur la moyenne et l'écart type :  
+  \[
+  \lambda = \mu + 3 \times \sigma
+  \]
+- Une séquence est considérée comme anormale si son erreur de reconstruction dépasse **λ**.  
+
+...
+
+---
